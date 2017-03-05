@@ -31,7 +31,7 @@ To import *PrtgAPI.CustomSensors*, run `Import-Module C:\path\to\PrtgAPI.CustomS
 ## Installation
 
 1. Download the [latest build](https://ci.appveyor.com/api/projects/lordmilko/prtgapi-customsensors/artifacts/PrtgAPI.CustomSensors.zip)
-2. Right click **PrtgAPI.zip** -> **Properties**
+2. Right click **PrtgAPI.CustomSensors.zip** -> **Properties**
 3. On the *General* tab, under *Security* select **Unblock**
 4. Unzip the file
 5. Run `Import-Module C:\path\to\PrtgAPI.CustomSensors`
