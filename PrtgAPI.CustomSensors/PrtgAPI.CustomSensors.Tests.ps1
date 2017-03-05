@@ -119,19 +119,19 @@ Describe "Result Tags" {
 
 		$errorMessage = "Prtg block requires an inner element"
 
-		It "Should have argument" {
+		It "Should throw without argument" {
 			{ Prtg } | Should Throw $errorMessage
 		}
 
-		It "Should have script block contents" {
+		It "Should throw with empty script block" {
 			{ Prtg {} } | Should Throw $errorMessage
 		}
 
-		It "Should have script block contents ignoring space" {
+		It "Should throw with empty script block ignoring space" {
 			{ Prtg { } } | Should Throw $errorMessage
 		}
 
-		It "Should have script block contents ignoring tab/newline" {
+		It "Should throw with empty script block ignoring tab/newline" {
 			{ Prtg {
 
 			} } | Should Throw $errorMessage
@@ -142,19 +142,19 @@ Describe "Result Tags" {
 	Context "Invalid Result block" {
 		$errorMessage = "Result block requires an inner element"
 
-		It "Should have argument" {
+		It "Should throw without argument" {
 			{ Prtg { Result	} } | Should Throw $errorMessage
 		}
 
-		It "Should have script block contents" {
+		It "Should throw with empty script block" {
 			{ Prtg { Result {} } } | Should Throw $errorMessage
 		}
 
-		It "Should have script block contents ignoring space" {
+		It "Should throw with empty script block ignoring space" {
 			{ Prtg { Result { }} } | Should Throw $errorMessage
 		}
 
-		It "Should have script block contents ignoring tab/newline" {
+		It "Should throw with empty script block ignoring tab/newline" {
 			{ Prtg {
 				Result {
 
