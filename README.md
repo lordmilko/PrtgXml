@@ -2,7 +2,7 @@
 
 [![Build status](https://img.shields.io/appveyor/ci/lordmilko/prtgapi-customsensors.svg)](https://ci.appveyor.com/project/lordmilko/prtgapi-customsensors)
 
-PrtgAPI.CustomSensors PowerShell module for generating the XML output required by *EXE/Script Advanced* custom sensors. `PrtgAPI.CustomSensors` can be found in the build directory of your project, alongside `PrtgAPI`
+PrtgAPI.CustomSensors is a PowerShell module for generating the XML output required by *EXE/Script Advanced* custom sensors. `PrtgAPI.CustomSensors` can be found in the build directory of your project, alongside `PrtgAPI`
 
 Typically, to generate a response with one channel the following XML is required
 
