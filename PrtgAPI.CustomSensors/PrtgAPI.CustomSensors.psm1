@@ -13,15 +13,15 @@ function __rootProperty($value)
 
 function __resultProperty($value)
 {
-    $name = (Get-PSCallStack)[1].Command
+	$name = (Get-PSCallStack)[1].Command
 	$xml = "<$name>$value</$name>"
 
-	if(!$value -or $value -eq "")
+	if(!$value)
 	{
 		$xml = "<$name/>"
 	}
 
-    "`t`t$xml`n"
+	"`t`t$xml`n"
 }
 
 function __getInner($scriptBlock)
@@ -33,7 +33,7 @@ function __getInner($scriptBlock)
 		throw "$caller block requires an inner element."
 	}
 
-    & $scriptBlock
+	& $scriptBlock
 }
 
 #################################################################################################
