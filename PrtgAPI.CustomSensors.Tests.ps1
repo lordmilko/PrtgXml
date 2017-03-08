@@ -137,6 +137,10 @@ Describe "Result Tags" {
 			} } | Should Throw $errorMessage
 		}
 
+        It "Should throw with invalid argument type" {
+            { Prtg "a" } | Should Throw "Cannot convert the `"a`" value of type `"System.String`" to type `"System.Management.Automation.ScriptBlock`""
+        }
+
 	}
 
 	Context "Invalid Result block" {
@@ -161,6 +165,12 @@ Describe "Result Tags" {
 				}
 			} } | Should Throw $errorMessage
 		}
+
+        It "Should throw with invalid argument type" {
+            { Prtg {
+                Result "a"
+            } } | Should Throw "Cannot convert the `"a`" value of type `"System.String`" to type `"System.Management.Automation.ScriptBlock`""
+        }
 	}
 }
 

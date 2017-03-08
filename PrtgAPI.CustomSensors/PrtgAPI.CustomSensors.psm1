@@ -44,9 +44,10 @@ function __getInner($scriptBlock)
 
 .DESCRIPTION
 	Prtg serves as the root node for all responses given under all EXE/Script Advanced sensors in PRTG, generating the <Prtg></Prtg> XML.
-    All XML nodes supported by EXE/Script Advanced sensor responses have corresponding functions under the PrtgAPI.CustomSensors module.
 
-	For a list of all supported functions, see Get-Module PrtgAPI.CustomSensors | Select -Expand ExportedFunctions
+	All XML nodes supported by EXE/Script Advanced sensor responses have corresponding functions under the PrtgAPI.CustomSensors module.
+
+	For a list of all supported functions, see Get-Command -Module PrtgAPI.CustomSensors
 
 .EXAMPLE
 
@@ -67,7 +68,7 @@ Prtg {
     Text "Woops!"
 }
 #>
-function Prtg($ScriptBlock)       { "<Prtg>`n$(__getInner $ScriptBlock)</Prtg>" }
+function Prtg([ScriptBlock]$ScriptBlock)       { "<Prtg>`n$(__getInner $ScriptBlock)</Prtg>" }
 
 <#
 .SYNOPSIS
@@ -75,7 +76,7 @@ function Prtg($ScriptBlock)       { "<Prtg>`n$(__getInner $ScriptBlock)</Prtg>" 
 	
 	For more information, see Get-Help Prtg or Setup -> PRTG API -> Custom Sensors within PRTG.
 #>
-function Result($ScriptBlock)     { "`t<Result>`n$(__getInner $ScriptBlock)`t</Result>`n" }
+function Result([ScriptBlock]$ScriptBlock)     { "`t<Result>`n$(__getInner $ScriptBlock)`t</Result>`n" }
 
 #################################################################################################
 
