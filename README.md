@@ -61,4 +61,4 @@ if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
 }
 ```
 
-`PrtgAPI.CustomSensors` functions can then be invoked in your scripts without issue
+`PrtgAPI.CustomSensors` functions can then be invoked in your scripts without issue (without even having to `Import-Module`
