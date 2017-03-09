@@ -26,7 +26,7 @@ Prtg {
 
 All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgAPI.CustomSensors*. For a list of tags that can be used in EXE/Script Advanced sensors, please see the [documentation on writing Custom Sensors](https://prtg.paessler.com/api.htm?tabid=7)
 
-To import *PrtgAPI.CustomSensors*, run `Import-Module C:\path\to\PrtgAPI.CustomSensors`. If *PrtgAPI.CustomSensors* is on your PSModulePath, you can simply run `Import-Module PrtgAPI.CustomSensors`
+To import *PrtgAPI.CustomSensors*, run `Import-Module PrtgAPI.CustomSensors`. Note: if you have installed *PrtgAPI.CustomSensors* to your PSModulePath (which is the case if you used NuGet) you don't actually have to import the module; it will be automatically imported when you invoke one of its functions.
 
 For help using *PrtgAPI.CustomSensors* within PowerShell, run `Get-Help Prtg`
 
