@@ -28,7 +28,17 @@ All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgAPI.Cu
 
 To import *PrtgAPI.CustomSensors*, run `Import-Module C:\path\to\PrtgAPI.CustomSensors`. If *PrtgAPI.CustomSensors* is on your PSModulePath, you can simply run `Import-Module PrtgAPI.CustomSensors`
 
+For help using *PrtgAPI.CustomSensors* within PowerShell, run `Get-Help Prtg`
+
+*PrtgAPI.CustomSensors* has no dependency on [PrtgAPI](https://github.com/lordmilko/PrtgAPI), and can be installed and run completely separately without issue.
+
 ## Installation
+
+### NuGet (PowerShell Gallery)
+
+`Install-Package PrtgAPI.CustomSensors`
+
+### Manual
 
 1. Download the [latest build](https://ci.appveyor.com/api/projects/lordmilko/prtgapi-customsensors/artifacts/PrtgAPI.CustomSensors.zip)
 2. Right click **PrtgAPI.CustomSensors.zip** -> **Properties**
@@ -38,7 +48,17 @@ To import *PrtgAPI.CustomSensors*, run `Import-Module C:\path\to\PrtgAPI.CustomS
 
 If PrtgAPI.CustomSensors is installed toyour PSModulePath, you can load the module within PowerShell by simply running `Import-Module PrtgAPI.CustomSensors`
 
-For help using *PrtgAPI.CustomSensors* within PowerShell, run `Get-Help Prtg`
+## Tips
 
-*PrtgAPI.CustomSensors* has no dependency on [PrtgAPI](https://github.com/lordmilko/PrtgAPI), and can be installed and run completely separately without issue.
+The first time you install a package from NuGet, PowerShell will prompt you to install the NuGet Package Provider. In addition, unless you have manually marked the PowerShell Gallery as a trusted package provider, you will be asked to confirm whether you're sure you want to install the package.
 
+To bypass these prompts and make your scripts portable and versatile, you can incorporate the following snippet into your code
+
+```powershell
+if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
+{
+    Install-Package PrtgAPI.CustomSensors -ForceBootstrap -Force | Out-Null
+}
+```
+
+`PrtgAPI.CustomSensors` functions can then be invoked in your scripts without issue
