@@ -66,3 +66,5 @@ if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
 ```
 
 `PrtgAPI.CustomSensors` functions can then be invoked in your scripts without issue (without even having to `Import-Module`
+
+When performing PowerShell Remoting, *PrtgAPI.CustomSensors* will need to be installed on the target server if you wish to output your response from inside your remote session. To install *PrtgAPI.CustomSensors* on the remote server, simply include the snippet above in the script block of your `Invoke-Command`
