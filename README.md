@@ -36,11 +36,11 @@ For help using *PrtgAPI.CustomSensors* within PowerShell, run `Get-Help Prtg`
 
 ### NuGet (PowerShell Gallery)
 
-You can install `PrtgAPI.CustomSensors` on any computer running PowerShell 5 by executing
+You can install *PrtgAPI.CustomSensors* on any computer running PowerShell 5 by executing
 
 `Install-Package PrtgAPI.CustomSensors`
 
-When using `PrtgAPI.CustomSensors`, it's advised to perform a check to see whether or not `PrtgAPI.CustomSensors` needs to be installed. For more information, see `Tips` below.
+When using *PrtgAPI.CustomSensors*, it's advised to perform a check to see whether or not *PrtgAPI.CustomSensors* needs to be installed. For more information, see *Tips* below.
 
 ### Manual
 
