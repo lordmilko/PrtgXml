@@ -1,7 +1,6 @@
 # PrtgAPI.CustomSensors
 
 [![Build status](https://img.shields.io/appveyor/ci/lordmilko/prtgapi-customsensors.svg)](https://ci.appveyor.com/project/lordmilko/prtgapi-customsensors)
-[![NuGet](https://img.shields.io/nuget/v/PrtgAPI.CustomSensors.svg)]()
 
 *PrtgAPI.CustomSensors* is a PowerShell module for generating the XML output required by *EXE/Script Advanced* custom sensors.
 
