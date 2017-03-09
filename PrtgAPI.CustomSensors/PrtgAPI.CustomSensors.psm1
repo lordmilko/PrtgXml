@@ -67,6 +67,18 @@ Prtg {
     Error 1
     Text "Woops!"
 }
+
+.EXAMPLE
+
+# Silently install PrtgAPI.CustomSensors if it is not installed. 
+
+if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
+{
+    Install-Package PrtgAPI.CustomSensors -ForceBootstrap -Force | Out-Null
+}
+
+By incorporating this check scripts may be executed on other machines without worrying about missing modules.
+
 #>
 function Prtg([ScriptBlock]$ScriptBlock)       { "<Prtg>`n$(__getInner $ScriptBlock)</Prtg>" }
 
