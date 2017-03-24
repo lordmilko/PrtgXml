@@ -28,6 +28,20 @@ All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgAPI.Cu
 
 To import *PrtgAPI.CustomSensors*, run `Import-Module PrtgAPI.CustomSensors`. Note: if you have installed this module to your PSModulePath (which is the case if you used NuGet) you don't actually have to import the module; it will be automatically imported when you invoke one of its functions.
 
+Standard language features including variables, control structures and exception handlers are fully compatible with *PrtgAPI.CustomSensors*, allowing for inline programming.
+
+```powershell
+Prtg {
+    foreach($elm in $elms)
+    {
+        Result {
+            Channel $elm.Name
+            Value $elm.Value
+        }
+    }
+}
+```
+
 For help using *PrtgAPI.CustomSensors* within PowerShell, run `Get-Help Prtg`
 
 *PrtgAPI.CustomSensors* has no dependency on [PrtgAPI](https://github.com/lordmilko/PrtgAPI), and can be installed and run completely separately without issue.

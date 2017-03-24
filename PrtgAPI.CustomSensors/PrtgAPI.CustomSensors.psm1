@@ -1,14 +1,27 @@
+function __rootElement($scriptBlock)
+{
+    $name = (Get-PSCallStack)[1].Command
+
+    $value = __executeScriptBlock $scriptBlock
+
+    $xml = "<$name>$value</$name>"
+
+    __formatXml $xml
+
+    #we need to fix all capitaized value variables below in the functions
+}
+
 function __rootProperty($value)
 {
 	$name = (Get-PSCallStack)[1].Command
-	$xml = "<$name>$Value</$name>"
+	$xml = "<$name>$value</$name>"
 
 	if(!$value)
 	{
 		$xml = "<$name/>"
 	}
 
-	"`t$xml`n"
+	__formatXml $xml
 }
 
 function __resultProperty($value)
@@ -21,12 +34,12 @@ function __resultProperty($value)
 		$xml = "<$name/>"
 	}
 
-	"`t`t$xml`n"
+	__formatXml $xml
 }
 
-function __getInner($scriptBlock)
+function __executeScriptBlock($scriptBlock)
 {
-	$caller = (Get-PSCallStack)[1].Command
+	$caller = (Get-PSCallStack)[2].Command
 
 	if(!$scriptBlock -or $scriptBlock.Ast.Extent.ToString() -replace "`n","" -replace "`r","" -replace "`t","" -replace "{","" -replace "}","" -replace " ","" -eq "")
 	{
@@ -34,6 +47,22 @@ function __getInner($scriptBlock)
 	}
 
 	& $scriptBlock
+}
+
+function __formatXml([xml]$xml)
+{
+    $stringWriter = New-Object System.IO.StringWriter
+    $xmlWriter = New-Object System.Xml.XmlTextWriter $stringWriter
+
+    $xmlWriter.Formatting = "Indented"
+    $xmlWriter.Indentation = 4
+
+    $xml.WriteContentTo($xmlWriter)
+
+    $xmlWriter.Flush()
+    $stringWriter.Flush()
+
+    $stringWriter.ToString()
 }
 
 #################################################################################################
@@ -80,7 +109,7 @@ if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
 By incorporating this check scripts may be executed on other machines without worrying about missing modules.
 
 #>
-function Prtg([ScriptBlock]$ScriptBlock)       { "<Prtg>`n$(__getInner $ScriptBlock)</Prtg>" }
+function Prtg([ScriptBlock]$ScriptBlock)       { __rootElement $ScriptBlock }
 
 <#
 .SYNOPSIS
@@ -88,7 +117,7 @@ function Prtg([ScriptBlock]$ScriptBlock)       { "<Prtg>`n$(__getInner $ScriptBl
 	
 	For more information, see Get-Help Prtg or Setup -> PRTG API -> Custom Sensors within PRTG.
 #>
-function Result([ScriptBlock]$ScriptBlock)     { "`t<Result>`n$(__getInner $ScriptBlock)`t</Result>`n" }
+function Result([ScriptBlock]$ScriptBlock)     { __rootElement $ScriptBlock }
 
 #################################################################################################
 

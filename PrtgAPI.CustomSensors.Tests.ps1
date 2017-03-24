@@ -10,7 +10,7 @@ Describe "Result Tags" {
 				}
 			}
 
-			$xml | Should Be "<Prtg>`n`t<Result>`n`t`t<Channel>My channel</Channel>`n `t`t<Value>3</Value>`n`t</Result>`n</Prtg>"
+			$xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value>3</Value>`r`n    </Result>`r`n</Prtg>"
 		}
 
 		It "Should have multiple channels" {
@@ -26,7 +26,13 @@ Describe "Result Tags" {
 				}
 			}
 
-			$xml | Should Be "<Prtg>`n`t<Result>`n`t`t<Channel>First channel</Channel>`n `t`t<Value>3.5</Value>`n`t</Result>`n `t<Result>`n`t`t<Channel>Second channel</Channel>`n `t`t<Value>4000</Value>`n`t</Result>`n</Prtg>"
+            $expectedXml =
+                "<Prtg>`r`n" +
+                "    <Result>`r`n        <Channel>First channel</Channel>`r`n        <Value>3.5</Value>`r`n    </Result>`r`n" +
+                "    <Result>`r`n        <Channel>Second channel</Channel>`r`n        <Value>4000</Value>`r`n    </Result>`r`n" +
+                "</Prtg>"
+
+			$xml | Should Be $expectedXml
 		}
 
 		It "Should have a channel and a message" {
@@ -38,7 +44,7 @@ Describe "Result Tags" {
 				}
 			}
 
-			$xml | Should Be "<Prtg>`n`t<Text>Hello!</Text>`n `t<Result>`n`t`t<Channel>My channel</Channel>`n `t`t<Value>4</Value>`n`t</Result>`n</Prtg>"
+			$xml | Should Be "<Prtg>`r`n    <Text>Hello!</Text>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value>4</Value>`r`n    </Result>`r`n</Prtg>"
 		}
 
 		It "Should have multiple channel modifiers" {
@@ -46,9 +52,11 @@ Describe "Result Tags" {
 				Result {
 					Channel "My channel"
 					Value 50
-
+                    ValueLookup prtg.standardlookups.yesno.stateyesok
 				}
 			}
+
+            $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value>50</Value>`r`n        <ValueLookup>prtg.standardlookups.yesno.stateyesok</ValueLookup>`r`n    </Result>`r`n</Prtg>"
 		}
 
 		It "Should process all tags" {
@@ -82,33 +90,33 @@ Describe "Result Tags" {
 			}
 
 			$expectedXml =
-			"<Prtg>`n" +
-				"`t<Error>1</Error>`n" +
-				" `t<Text>Woops!</Text>`n" +
-				" `t<Result>`n" +
-					"`t`t<Channel>My channel</Channel>`n" +
-					" `t`t<Value>3</Value>`n" +
-					" `t`t<Unit>Custom</Unit>`n" +
-					" `t`t<CustomUnit>Bloops</CustomUnit>`n" +
-					" `t`t<SpeedSize>KiloByte</SpeedSize>`n" +
-					" `t`t<VolumeSize>TeraBit</VolumeSize>`n" +
-					" `t`t<SpeedTime>Day</SpeedTime>`n" +
-					" `t`t<Mode>Difference</Mode>`n" +
-					" `t`t<Float>1</Float>`n" +
-					" `t`t<DecimalMode>Auto</DecimalMode>`n" +
-					" `t`t<Warning>1</Warning>`n" +
-					" `t`t<ShowChart>1</ShowChart>`n" +
-					" `t`t<ShowTable>1</ShowTable>`n" +
-					" `t`t<LimitMaxError>30</LimitMaxError>`n" +
-					" `t`t<LimitMaxWarning>20</LimitMaxWarning>`n" +
-					" `t`t<LimitMinWarning>10</LimitMinWarning>`n" +
-					" `t`t<LimitMinError>5</LimitMinError>`n" +
-					" `t`t<LimitErrorMsg>Things are not looking good</LimitErrorMsg>`n" +
-					" `t`t<LimitWarningMsg>Things could be better</LimitWarningMsg>`n" +
-					" `t`t<LimitMode>1</LimitMode>`n" +
-					" `t`t<ValueLookup>prtg.standardlookups.yesno.stateyesok</ValueLookup>`n" +
-					" `t`t<NotifyChanged/>`n" +
-				"`t</Result>`n" +
+			"<Prtg>`r`n" +
+				"    <Error>1</Error>`r`n" +
+				"    <Text>Woops!</Text>`r`n" +
+				"    <Result>`r`n" +
+					"        <Channel>My channel</Channel>`r`n" +
+					"        <Value>3</Value>`r`n" +
+					"        <Unit>Custom</Unit>`r`n" +
+					"        <CustomUnit>Bloops</CustomUnit>`r`n" +
+					"        <SpeedSize>KiloByte</SpeedSize>`r`n" +
+					"        <VolumeSize>TeraBit</VolumeSize>`r`n" +
+					"        <SpeedTime>Day</SpeedTime>`r`n" +
+					"        <Mode>Difference</Mode>`r`n" +
+					"        <Float>1</Float>`r`n" +
+					"        <DecimalMode>Auto</DecimalMode>`r`n" +
+					"        <Warning>1</Warning>`r`n" +
+					"        <ShowChart>1</ShowChart>`r`n" +
+					"        <ShowTable>1</ShowTable>`r`n" +
+					"        <LimitMaxError>30</LimitMaxError>`r`n" +
+					"        <LimitMaxWarning>20</LimitMaxWarning>`r`n" +
+					"        <LimitMinWarning>10</LimitMinWarning>`r`n" +
+					"        <LimitMinError>5</LimitMinError>`r`n" +
+					"        <LimitErrorMsg>Things are not looking good</LimitErrorMsg>`r`n" +
+					"        <LimitWarningMsg>Things could be better</LimitWarningMsg>`r`n" +
+					"        <LimitMode>1</LimitMode>`r`n" +
+					"        <ValueLookup>prtg.standardlookups.yesno.stateyesok</ValueLookup>`r`n" +
+					"        <NotifyChanged />`r`n" +
+				"    </Result>`r`n" +
 			"</Prtg>"
 
 			$xml | Should Be $expectedXml
@@ -181,6 +189,6 @@ Describe "Error Tags" {
 			Text "Woops!"
 		}
 
-		$xml | Should Be "<Prtg>`n`t<Error>1</Error>`n `t<Text>Woops!</Text>`n</Prtg>"
+		$xml | Should Be "<Prtg>`r`n    <Error>1</Error>`r`n    <Text>Woops!</Text>`r`n</Prtg>"
 	}
 }
