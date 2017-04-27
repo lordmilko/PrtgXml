@@ -1,0 +1,33 @@
+TOPIC
+    about_CustomSensors
+
+SHORT DESCRIPTION
+    PrtgAPI.CustomSensors is a wrapper library for creating PRTG EXE/Script Advanced Sensor XML output.
+
+LONG DESCRIPTION
+    PrtgAPI.CustomSensors provides a series of functions that correspond to the XML tags found in
+    EXE/Script Advanded Sensors. Each function takes one of two arguments:
+
+        If the function corresponds to a tag that contains inner tag, a script block containing
+        those tags.
+
+        If the function corresponds to a take that takes a proper value, a literal or a variable
+        containing that value.
+
+EXAMPLES
+    Prtg {
+        Result {
+            Channel "First channel"
+            Value 10
+        }
+    }
+
+KEYWORDS
+    PRTG EXE Script Advanced Sensor XML
+
+SEE ALSO
+    Prtg
+    Result
+    Channel
+    Value
+    gcm -Module PrtgAPI.CustomSensors

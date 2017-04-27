@@ -180,6 +180,19 @@ Describe "Result Tags" {
             } } | Should Throw "Cannot convert the `"a`" value of type `"System.String`" to type `"System.Management.Automation.ScriptBlock`""
         }
 	}
+
+    Context "Edge Cases" {
+        It "Should have a value of 0" {
+            $xml = Prtg {
+                Result {
+                    Channel "My channel"
+                    Value 0
+                }
+            }
+
+            $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value>0</Value>`r`n    </Result>`r`n</Prtg>"
+        }
+    }
 }
 
 Describe "Error Tags" {
