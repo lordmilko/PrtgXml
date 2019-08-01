@@ -74,9 +74,9 @@ function __formatXml([xml]$xml)
 .DESCRIPTION
 	Prtg serves as the root node for all responses given under all EXE/Script Advanced sensors in PRTG, generating the <Prtg></Prtg> XML.
 
-	All XML nodes supported by EXE/Script Advanced sensor responses have corresponding functions under the PrtgAPI.CustomSensors module.
+	All XML nodes supported by EXE/Script Advanced sensor responses have corresponding functions under the PrtgXml module.
 
-	For a list of all supported functions, see Get-Command -Module PrtgAPI.CustomSensors
+	For a list of all supported functions, see Get-Command -Module PrtgXml
 
 .EXAMPLE
 
@@ -99,11 +99,11 @@ Prtg {
 
 .EXAMPLE
 
-# Silently install PrtgAPI.CustomSensors if it is not installed. 
+# Silently install PrtgXml if it is not installed. 
 
-if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
+if(!(Get-Module -ListAvailable PrtgXml))
 {
-    Install-Package PrtgAPI.CustomSensors -ForceBootstrap -Force | Out-Null
+    Install-Package PrtgXml -ForceBootstrap -Force | Out-Null
 }
 
 By incorporating this check scripts may be executed on other machines without worrying about missing modules.
@@ -114,7 +114,7 @@ By incorporating this check scripts may be executed on other machines without wo
     Value
     Error
     Message
-    about_CustomSensors
+    about_PrtgXml
 
 #>
 function Prtg([ScriptBlock]$ScriptBlock)       { __rootElement $ScriptBlock }
@@ -147,7 +147,7 @@ function Prtg([ScriptBlock]$ScriptBlock)       { __rootElement $ScriptBlock }
     Channel
     Value
     Error
-    about_CustomSensors
+    about_PrtgXml
 #>
 function Result([ScriptBlock]$ScriptBlock)     { __rootElement $ScriptBlock }
 
@@ -187,7 +187,7 @@ function Result([ScriptBlock]$ScriptBlock)     { __rootElement $ScriptBlock }
     Prtg
     Result
     Error
-    about_CustomSensors
+    about_PrtgXml
 #>
 function Text($Value)             { __rootProperty $Value }
 
@@ -211,7 +211,7 @@ function Text($Value)             { __rootProperty $Value }
 .LINK
     Prtg
     Text
-    about_CustomSensors
+    about_PrtgXml
 #>
 function Error($Value)            { __rootProperty $Value }
 
@@ -239,7 +239,7 @@ function Error($Value)            { __rootProperty $Value }
     Prtg
     Result
     Value
-    about_CustomSensors
+    about_PrtgXml
 #>
 function Channel($Value)          { __resultProperty $Value }
 
@@ -277,7 +277,7 @@ function Channel($Value)          { __resultProperty $Value }
     Result
     Channel
     Float
-    about_CustomSensors
+    about_PrtgXml
 #>
 function Value($Value)            { __resultProperty $Value }
 
@@ -321,7 +321,7 @@ function Value($Value)            { __resultProperty $Value }
     Result
     Channel
     Value
-    about_CustomSensors
+    about_PrtgXml
 #>
 function Unit($Value)             { __resultProperty $Value }
 
@@ -350,7 +350,7 @@ function Unit($Value)             { __resultProperty $Value }
     Result
     Channel
     Value
-    about_CustomSensors
+    about_PrtgXml
 #>
 function CustomUnit($Value)       { __resultProperty $Value }
 

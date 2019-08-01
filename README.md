@@ -1,8 +1,8 @@
-# PrtgAPI.CustomSensors
+# PrtgXml
 
-[![Build status](https://img.shields.io/appveyor/ci/lordmilko/prtgapi-customsensors.svg)](https://ci.appveyor.com/project/lordmilko/prtgapi-customsensors)
+[![Build status](https://img.shields.io/appveyor/ci/lordmilko/prtgxml.svg)](https://ci.appveyor.com/project/lordmilko/prtgxml)
 
-*PrtgAPI.CustomSensors* is a PowerShell module for generating the XML output required by *EXE/Script Advanced* custom sensors.
+*PrtgXml* is a PowerShell module for generating the XML output required by *EXE/Script Advanced* custom sensors.
 
 Typically, to generate a response with one channel the following XML is required
 
@@ -14,7 +14,7 @@ Typically, to generate a response with one channel the following XML is required
     </Result>
 </Prtg>
 ```
-The equivalent XML can be generated as follows via *PrtgAPI.CustomSensors*
+The equivalent XML can be generated as follows via *PrtgXml*
 ```powershell
 Prtg {
     Result {
@@ -24,11 +24,16 @@ Prtg {
 }
 ```
 
-All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgAPI.CustomSensors*. For a list of tags that can be used in EXE/Script Advanced sensors, please see the [documentation on writing Custom Sensors](https://prtg.paessler.com/api.htm?tabid=7&username=demo&password=demodemo)
+All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgXml*. For a list of tags that can be used in EXE/Script Advanced sensors, please see the [documentation on writing Custom Sensors](https://www.paessler.com/manuals/prtg/custom_sensors#advanced_sensors) or read the docs.
 
-To import *PrtgAPI.CustomSensors*, run `Import-Module PrtgAPI.CustomSensors`. Note: if you have installed this module to your PSModulePath (which is the case if you used NuGet) you don't actually have to import the module; it will be automatically imported when you invoke one of its functions.
+For tags with known values (`Unit`, `SpeedSize`, `DecimalMode`, etc) PrtgXml will provide a list of suggestions you can choose from. Cycle through options simply by hitting the tab key!
 
-Standard language features including variables, control structures and exception handlers are fully compatible with *PrtgAPI.CustomSensors*, allowing for inline programming.
+```powershell
+C:\> Unit <tab>
+C:\> Unit BytesBandwidth
+```
+
+Standard language features including variables, control structures and exception handlers are fully compatible with *PrtgXml*, allowing for inline programming.
 
 ```powershell
 Prtg {
@@ -42,31 +47,35 @@ Prtg {
 }
 ```
 
-For help using *PrtgAPI.CustomSensors* within PowerShell, run `Get-Help Prtg`
-
-*PrtgAPI.CustomSensors* has no dependency on [PrtgAPI](https://github.com/lordmilko/PrtgAPI), and can be installed and run completely separately without issue.
+For help using *PrtgXml* within PowerShell, run `Get-Help PrtgXml`
 
 ## Installation
 
 ### NuGet (PowerShell Gallery)
 
-You can install *PrtgAPI.CustomSensors* on any computer running PowerShell 5 by executing
+You can install *PrtgXml* on any computer running PowerShell 5 by executing
 
 ```powershell
-Install-Package PrtgAPI.CustomSensors
+Install-Package PrtgXml
 ```
 
-When using *PrtgAPI.CustomSensors*, it's advised to perform a check to see whether or not *PrtgAPI.CustomSensors* needs to be installed. For more information, see *Tips* below.
+When using *PrtgXml*, it's advised to perform a check to see whether or not *PrtgXml* needs to be installed. For more information, see *Tips* below.
+
+Note: if you were previously using this package under its previous name (*PrtgAPI.CustomSensors*) you will need to uninstall the existing package first before you can install the new one
+
+```powershell
+Uninstall-Package PrtgAPI.CustomSensors -AllVersions
+```
 
 ### Manual
 
-1. Download the [latest build](https://ci.appveyor.com/api/projects/lordmilko/prtgapi-customsensors/artifacts/PrtgAPI.CustomSensors.zip)
-2. Right click **PrtgAPI.CustomSensors.zip** -> **Properties**
+1. Download the [latest build](https://ci.appveyor.com/api/projects/lordmilko/prtgxml/artifacts/PrtgXml.zip)
+2. Right click **PrtgXml.zip** -> **Properties**
 3. On the *General* tab, under *Security* select **Unblock**
 4. Unzip the file
-5. Run `Import-Module C:\path\to\PrtgAPI.CustomSensors`
+5. Run `Import-Module C:\path\to\PrtgXml`
 
-If PrtgAPI.CustomSensors is installed toyour PSModulePath, you can load the module within PowerShell by simply running `Import-Module PrtgAPI.CustomSensors`
+If PrtgXml is installed to your `PSModulePath`, the module will be automatically imported whenever you invoke one of its functions. You can also manually import the module into your script by running `Import-Module PrtgXml`.
 
 ## Tips
 
@@ -75,12 +84,12 @@ The first time you install a package from NuGet, PowerShell will prompt you to i
 To bypass these prompts and make your scripts portable and versatile, you can incorporate the following snippet into your code
 
 ```powershell
-if(!(Get-Module -ListAvailable PrtgAPI.CustomSensors))
+if(!(Get-Module -ListAvailable PrtgXml))
 {
-    Install-Package PrtgAPI.CustomSensors -ForceBootstrap -Force | Out-Null
+    Install-Package PrtgXml -ForceBootstrap -Force | Out-Null
 }
 ```
 
-`PrtgAPI.CustomSensors` functions can then be invoked in your scripts without issue (without even having to `Import-Module`. This technique can also be found in the examples of function `Prtg` (`Get-Help Prtg -Examples`)
+`PrtgXml` functions can then be invoked in your scripts without issue (without even having to `Import-Module`. This technique can also be found in built-in help for PrtgXml (`Get-Help PrtgXml -Examples`)
 
-When performing PowerShell Remoting, *PrtgAPI.CustomSensors* will need to be installed on the target server if you wish to output your response from inside your remote session. To install *PrtgAPI.CustomSensors* on the remote server, simply include the snippet above in the script block of your `Invoke-Command`
+When performing PowerShell Remoting, *PrtgXml* will need to be installed on the target server if you wish to output your response from inside your remote session. To install *PrtgXml* on the remote server, simply include the snippet above in the script block of your `Invoke-Command`

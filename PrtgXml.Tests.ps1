@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot\PrtgAPI.CustomSensors
+Import-Module $PSScriptRoot\PrtgXml
 
 Describe "Result Tags" {
 	Context "Valid XML" {
