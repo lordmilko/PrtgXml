@@ -1,53 +1,42 @@
-function __rootElement($scriptBlock)
+function Get-PrtgContainerXml($scriptBlock)
 {
     $name = (Get-PSCallStack)[1].Command
 
-    $value = __executeScriptBlock $scriptBlock
+    $value = Invoke-PrtgScriptBlock $scriptBlock
 
     $xml = "<$name>$value</$name>"
 
-    __formatXml $xml
+    Format-PrtgXml $xml
 }
 
-function __rootProperty($value)
+function Get-PrtgValueXml($value)
 {
-	$name = (Get-PSCallStack)[1].Command
-	$xml = "<$name>$value</$name>"
+    $value = [System.Security.SecurityElement]::Escape($value)
 
-	if(!$value -and $value -ne 0)
-	{
-		$xml = "<$name/>"
-	}
+    $name = (Get-PSCallStack)[1].Command
+    $xml = "<$name>$value</$name>"
 
-	__formatXml $xml
+    if(!$value -and $value -ne 0)
+    {
+        $xml = "<$name/>"
+    }
+
+    Format-PrtgXml $xml
 }
 
-function __resultProperty($value)
+function Invoke-PrtgScriptBlock($scriptBlock)
 {
-	$name = (Get-PSCallStack)[1].Command
-	$xml = "<$name>$value</$name>"
+    $caller = (Get-PSCallStack)[2].Command
 
-	if(!$value -and $value -ne 0)
-	{
-		$xml = "<$name/>"
-	}
+    if(!$scriptBlock -or $scriptBlock.Ast.Extent.ToString() -replace "`n","" -replace "`r","" -replace "`t","" -replace "{","" -replace "}","" -replace " ","" -eq "")
+    {
+        throw "$caller block requires an inner element."
+    }
 
-	__formatXml $xml
+    & $scriptBlock
 }
 
-function __executeScriptBlock($scriptBlock)
-{
-	$caller = (Get-PSCallStack)[2].Command
-
-	if(!$scriptBlock -or $scriptBlock.Ast.Extent.ToString() -replace "`n","" -replace "`r","" -replace "`t","" -replace "{","" -replace "}","" -replace " ","" -eq "")
-	{
-		throw "$caller block requires an inner element."
-	}
-
-	& $scriptBlock
-}
-
-function __formatXml([xml]$xml)
+function Format-PrtgXml([xml]$xml)
 {
     $stringWriter = New-Object System.IO.StringWriter
     $xmlWriter = New-Object System.Xml.XmlTextWriter $stringWriter
@@ -65,35 +54,146 @@ function __formatXml([xml]$xml)
 
 #################################################################################################
 
-function Prtg([ScriptBlock]$ScriptBlock)       { __rootElement $ScriptBlock }
-function Result([ScriptBlock]$ScriptBlock)     { __rootElement $ScriptBlock }
+function Prtg([ScriptBlock]$ScriptBlock)   { Get-PrtgContainerXml $ScriptBlock }
+function Result([ScriptBlock]$ScriptBlock) { Get-PrtgContainerXml $ScriptBlock }
 
 #################################################################################################
 
-function Text($Value)             { __rootProperty $Value }
-function Error($Value)            { __rootProperty $Value }
+function Text            ([string]$Value)  { Get-PrtgValueXml $Value }
+function Error           ([string]$Value)     { Get-PrtgValueXml $Value }
 
 #################################################################################################
 
-function Channel($Value)          { __resultProperty $Value }
-function Value($Value)            { __resultProperty $Value }
-function Unit($Value)             { __resultProperty $Value }
-function CustomUnit($Value)       { __resultProperty $Value }
-function SpeedSize($Value)        { __resultProperty $Value }
-function VolumeSize($Value)       { __resultProperty $Value }
-function SpeedTime ($Value)       { __resultProperty $Value }
-function Mode ($Value)            { __resultProperty $Value }
-function Float ($Value)           { __resultProperty $Value }
-function DecimalMode ($Value)     { __resultProperty $Value }
-function Warning ($Value)         { __resultProperty $Value }
-function ShowChart ($Value)       { __resultProperty $Value }
-function ShowTable ($value)       { __resultProperty $Value }
-function LimitMaxError ($Value)   { __resultProperty $Value }
-function LimitMaxWarning ($Value) { __resultProperty $Value }
-function LimitMinWarning ($Value) { __resultProperty $Value }
-function LimitMinError ($Value)   { __resultProperty $Value }
-function LimitErrorMsg ($Value)   { __resultProperty $Value }
-function LimitWarningMsg ($Value) { __resultProperty $Value }
-function LimitMode ($Value)       { __resultProperty $Value }
-function ValueLookup ($Value)     { __resultProperty $Value }
-function NotifyChanged ($Value)   { __resultProperty $Value }
+function Channel         ([string]$Value)  { Get-PrtgValueXml $Value }
+function Value           ([string]$Value)  { Get-PrtgValueXml $Value }
+function CustomUnit      ([string]$Value)  { Get-PrtgValueXml $Value }
+function LimitMaxError   ([string]$Value)  { Get-PrtgValueXml $Value }
+function LimitMaxWarning ([string]$Value)  { Get-PrtgValueXml $Value }
+function LimitMinWarning ([string]$Value)  { Get-PrtgValueXml $Value }
+function LimitMinError   ([string]$Value)  { Get-PrtgValueXml $Value }
+function LimitErrorMsg   ([string]$Value)  { Get-PrtgValueXml $Value }
+function LimitWarningMsg ([string]$Value)  { Get-PrtgValueXml $Value }
+function ValueLookup     ([string]$Value)  { Get-PrtgValueXml $Value }
+function NotifyChanged                     { Get-PrtgValueXml $null }
+
+function Unit
+{
+    param(
+        [ArgumentCompleter({
+            "BytesBandwidth","BytesMemory","BytesDisk","Temperature",
+            "Percent","TimeResponse","TimeSeconds","Custom","Count",
+            "CPU","BytesFile","SpeedDisk","SpeedNet","TimeHours"
+        })]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function SpeedSize
+{
+    param(
+        [ArgumentCompleter({
+            "One","Kilo","Mega","Giga","Tera","Byte",
+            "KiloByte","MegaByte","GigaByte","TeraByte",
+            "Bit","KiloBit","MegaBit","GigaBit","TeraBit"
+        })]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function VolumeSize
+{
+    param(
+        [ArgumentCompleter({
+            "One","Kilo","Mega","Giga","Tera","Byte",
+            "KiloByte","MegaByte","GigaByte","TeraByte",
+            "Bit","KiloBit","MegaBit","GigaBit","TeraBit"
+        })]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function SpeedTime
+{
+    param(
+        [ArgumentCompleter({"Second","Minute","Hour","Day"})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function Mode
+{
+    param(
+        [ArgumentCompleter({"Absolute", "Difference"})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function Float
+{
+    param(
+        [ArgumentCompleter({0,1})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function DecimalMode
+{
+    param(
+        [ArgumentCompleter({"Auto","All"})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function Warning
+{
+    param(
+        [ArgumentCompleter({0,1})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function ShowChart
+{
+    param(
+        [ArgumentCompleter({0,1})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function ShowTable
+{
+    param(
+        [ArgumentCompleter({0,1})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}
+
+function LimitMode
+{
+    param(
+        [ArgumentCompleter({0,1})]
+        [string]$Value
+    )
+
+    Get-PrtgValueXml $Value
+}

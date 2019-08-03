@@ -149,6 +149,13 @@ Describe "Result Tags" {
             { Prtg "a" } | Should Throw "Cannot convert the `"a`" value of type `"System.String`" to type `"System.Management.Automation.ScriptBlock`""
         }
 
+        It "escapes XML characters inside an outer container" {
+            $xml = Prtg {
+                Text "A & B"
+            }
+
+            $xml | Should Be "<Prtg>`r`n    <Text>A &amp; B</Text>`r`n</Prtg>"
+        }
 	}
 
 	Context "Invalid Result block" {
@@ -179,10 +186,20 @@ Describe "Result Tags" {
                 Result "a"
             } } | Should Throw "Cannot convert the `"a`" value of type `"System.String`" to type `"System.Management.Automation.ScriptBlock`""
         }
+
+        It "escapes invalid XML characters inside an inner container" {
+            $xml = Prtg {
+                Result {
+                    Channel "A & B"
+                }
+            }
+
+            $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>A &amp; B</Channel>`r`n    </Result>`r`n</Prtg>"
+        }
 	}
 
-    Context "Edge Cases" {
-        It "Should have a value of 0" {
+    Context "Value Parsing" {
+        It "Should treat 0 as a value" {
             $xml = Prtg {
                 Result {
                     Channel "My channel"
@@ -191,6 +208,45 @@ Describe "Result Tags" {
             }
 
             $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value>0</Value>`r`n    </Result>`r`n</Prtg>"
+        }
+
+        It "Should treat a missing value as null" {
+            $xml = Prtg {
+                Result {
+                    Channel "My channel"
+                    Value
+                }
+            }
+
+            $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value />`r`n    </Result>`r`n</Prtg>"
+        }
+
+        It "Should treat `$null as null" {
+            $xml = Prtg {
+                Result {
+                    Channel "My channel"
+                    Value $null
+                }
+            }
+
+            $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value />`r`n    </Result>`r`n</Prtg>"
+        }
+
+        It "Should treat an empty string as null" {
+            $xml = Prtg {
+                Result {
+                    Channel "My channel"
+                    Value ""
+                }
+            }
+
+            $xml | Should Be "<Prtg>`r`n    <Result>`r`n        <Channel>My channel</Channel>`r`n        <Value />`r`n    </Result>`r`n</Prtg>"
+        }
+
+        It "escapes invalid XML characters inside a value block" {
+            $xml = Text "A & B"
+
+            $xml | Should Be "<Text>A &amp; B</Text>"
         }
     }
 }
