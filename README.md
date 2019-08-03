@@ -1,6 +1,8 @@
 # PrtgXml
 
 [![Build status](https://img.shields.io/appveyor/ci/lordmilko/prtgxml.svg)](https://ci.appveyor.com/project/lordmilko/prtgxml)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/PrtgXml?label=psgallery)](https://www.powershellgallery.com/packages/PrtgXml)
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/PrtgXml)](https://www.powershellgallery.com/packages/PrtgXml)
 
 *PrtgXml* is a PowerShell library that provides a declarative syntax for creating EXE/Script Advanced sensors in PRTG Network Monitor.
 
@@ -24,9 +26,9 @@ Prtg {
 }
 ```
 
-All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgXml*. For a list of tags that can be used in EXE/Script Advanced sensors, please see the [documentation on writing Custom Sensors](https://www.paessler.com/manuals/prtg/custom_sensors#advanced_sensors) or read the docs.
+All tags supported by *EXE/Script Advanced* sensors are supported by *PrtgXml*. For a list of tags that can be used in EXE/Script Advanced sensors, please see the [documentation on writing Custom Sensors](https://www.paessler.com/manuals/prtg/custom_sensors#advanced_sensors) or read the [docs](https://github.com/lordmilko/PrtgXml/tree/master/docs). Every command supported by *PrtgXml* has full PowerShell documentation (accessible via `Get-Help <command>`) explaining what the command does and how to use it.
 
-For tags with known values (`Unit`, `SpeedSize`, `DecimalMode`, etc) PrtgXml will provide a list of suggestions you can choose from. Cycle through options simply by hitting the tab key!
+For tags with known values (`Unit`, `SpeedSize`, `DecimalMode`, etc) *PrtgXml* will provide a list of suggestions you can choose from. Cycle through options simply by hitting the tab key!
 
 ```powershell
 C:\> Unit <tab>
@@ -90,6 +92,6 @@ if(!(Get-Module -ListAvailable PrtgXml))
 }
 ```
 
-`PrtgXml` functions can then be invoked in your scripts without issue (without even having to `Import-Module`. This technique can also be found in built-in help for PrtgXml (`Get-Help PrtgXml -Examples`)
+`PrtgXml` functions can then be invoked in your scripts without issue (without even having to `Import-Module`). This technique can also be found in the PowerShell *about topic* via `Get-Help PrtgXml`.
 
 When performing PowerShell Remoting, *PrtgXml* will need to be installed on the target server if you wish to output your response from inside your remote session. To install *PrtgXml* on the remote server, simply include the snippet above in the script block of your `Invoke-Command`
