@@ -1,0 +1,17 @@
+version: 'Build #{build}'
+install:
+- ps: |
+    Import-Module .\tools\Appveyor.psm1 -DisableNameChecking
+    Invoke-AppveyorInstall
+build_script:
+- ps: Set-AppveyorVersion
+test_script:
+- ps: Invoke-AppveyorTest
+after_test:
+- ps: New-AppveyorPackage
+artifacts:
+- path: PrtgXml
+- path: '*.nupkg'
+skip_commits:
+  files:
+    - README.md
