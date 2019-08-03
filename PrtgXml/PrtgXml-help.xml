@@ -1,0 +1,2593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Channel</command:name>
+      <command:verb>Channel</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Channel&gt;&lt;/Channel&gt; XML tag for specifying the name of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Channel tag specifies the name of the channel that will be displayed within PRTG. This value must be unique within the sensor it applies to. If a Result is being returned, this value is mandatory.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Channel</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The name to use for the channel.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The name to use for the channel.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a sensor with one channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Channel.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>CustomUnit</command:name>
+      <command:verb>CustomUnit</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;CustomUnit&gt;&lt;/CustomUnit&gt; XML tag for specifying the custom unit of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The CustomUnit tag specifies the custom unit to display when the Unit of the channel is set to Custom. The custom unit may be any valid string, however it is advisable to keep it short.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>CustomUnit</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The custom string to use for the unit.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The custom string to use for the unit.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "Frogs per capita"
+        Value 3
+        Unit Custom
+        CustomUnit Frogs
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a sensor with a channel using a custom unit.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/CustomUnit.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Unit</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>DecimalMode</command:name>
+      <command:verb>DecimalMode</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;DecimalMode&gt;&lt;/DecimalMode&gt; XML tag for specifying the decimal mode of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The DecimalMode tag controls how many decimal places should be displayed when the Float tag has been specified, indicating the value should be treated as a floating point number.</maml:para>
+      <maml:para>If the decimal mode is All, all decimal places will be displayed. If the decimal mode is Auto, two decimal places will be displayed. If the value does not contain a decimal point, no decimal places will be displayed.</maml:para>
+      <maml:para>If you wish to specify a custom number of decimal places, do not specify a decimal mode. The custom decimal mode can be selected from within the PRTG UI.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>DecimalMode</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The decimal mode to use. Either Auto or All.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The decimal mode to use. Either Auto or All.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1.2
+        Float 1
+        DecimalMode Auto
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number with two decimal places.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1.23456789
+        Float 1
+        DecimalMode All
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number with all decimal places.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/DecimalMode.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Float</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Error</command:name>
+      <command:verb>Error</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates an &lt;Error&gt;&lt;/Error&gt; XML tag for specifying that a fatal error has occurred in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Error tag specifies that the sensor result returns an error and to ignore any channel results (if they are included).</maml:para>
+      <maml:para>When returning an error, a Text tag should be included to indicate the reason the sensor failed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Error</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use. Either 1 (error) or 0 (no error).</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use. Either 1 (error) or 0 (no error).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Error 1
+    Text "A critical error occurred: The system could not find the file something.txt"
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate an error response.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Error.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Text</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Warning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Float</command:name>
+      <command:verb>Float</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Float&gt;&lt;/Float&gt; XML tag for specifying whether a channel value should be represented as a floating point number in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Float tag iIndicates whether a value should be represented as a floating point number. Default value is 0 (false).</maml:para>
+      <maml:para>If value is set to 1 (true) the number of decimal places to use can be controlled via the DecimalMode tag. Regardless of the DecimalMode used, if a number does not contain a decimal point it will be displayed as a whole number.</maml:para>
+      <maml:para>If you wish to display a custom number of decimal places, the DecimalMode tag can be ommitted. To specify a custom number of decimal places, you must use the PRTG UI.</maml:para>
+      <maml:para>If Float is not enabled and a floating point number is specified in Value with any digit other than 0 after the decimal point, the number will be displayed as 0 in PRTG.</maml:para>
+      <maml:para>As such, if you wish to display a float as an integer in PRTG you must cast it to an integer before passing it to the Value function.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Float</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use. Either 1 (represent values as floating point numbers) or 0 (represent values as integers).</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use. Either 1 (represent values as floating point numbers) or 0 (represent values as integers).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1.2
+        Float 1
+        DecimalMode Auto
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number with two decimal places.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1.23456789
+        Float 1
+        DecimalMode All
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number with all decimal places.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1.23456789
+        Float 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number with a custom number of decimal places. The custom amount must be specified in the PRTG UI.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 4 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value ([int]1.23456789)
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number as an integer in the PRTG UI.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Float.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>DecimalMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitErrorMsg</command:name>
+      <command:verb>LimitErrorMsg</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitErrorMsg&gt;&lt;/LimitErrorMsg&gt; XML tag for specifying the default error limit message of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitErrorMsg tag specifies the message to display when a channel's value has surpassed its LimitMaxError or LimitMinError. This tag can be used alongside Limit Warning tags including LimitMaxWarning, LimitMinWarning and LimitWarningMsg.</maml:para>
+      <maml:para>If the channel's value reaches a Warning Limit threshold, the sensor's message will be replaced with the Warning Limit Message.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the error message can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitErrorMsg</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The message to display.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The message to display.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMaxError 2
+        LimitErrorMsg "System is about to explode!"
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify an error message for a channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitErrorMsg.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitWarningMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitMaxError</command:name>
+      <command:verb>LimitMaxError</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitMaxError&gt;&lt;/LimitMaxError&gt; XML tag for specifying the default upper error limit threshold of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitMaxError tag specifies the maximum value a channel's value must stay below to avoid going into an error state. A sensor will enter a error state when a channel's value goes above this threshold.</maml:para>
+      <maml:para>If LimitMode is not set to 1 when this channel is created, this value will not take effect until limits are manually enabled in the PRTG UI.</maml:para>
+      <maml:para>This tag can be used in conjunction with LimitMinError and LimitErrorMsg.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the lower warning limit can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitMaxError</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMaxError 4
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify an upper error limit for a channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitMaxError.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitErrorMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitWarningMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitMaxWarning</command:name>
+      <command:verb>LimitMaxWarning</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitMaxWarning&gt;&lt;/LimitMaxWarning&gt; XML tag for specifying the default upper warning limit threshold of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitMaxWarning tag specifies the maximum value a channel's value must stay below to avoid going into a warning state. A sensor will enter a warning state when a channel's value goes above this threshold.</maml:para>
+      <maml:para>If LimitMode is not set to 1 when this channel is created, this value will not take effect until limits are manually enabled in the PRTG UI.</maml:para>
+      <maml:para>This tag can be used in conjunction with LimitMinWarning and LimitWarningMsg.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the lower warning limit can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitMaxWarning</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMaxWarning 4
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify an upper warning limit for a channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitMaxWarning.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitWarningMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitErrorMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitMinError</command:name>
+      <command:verb>LimitMinError</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitMinError&gt;&lt;/LimitMinError&gt; XML tag for specifying the default lower error limit threshold of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitMinError tag specifies the minimum value a channel's value must stay above to avoid going into an error state. A sensor will enter an error state when a channel's value goes below this threshold.</maml:para>
+      <maml:para>If LimitMode is not set to 1 when this channel is created, this value will not take effect until limits are manually enabled in the PRTG UI.</maml:para>
+      <maml:para>This tag can be used in conjunction with LimitMaxError and LimitErrorMsg.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the lower error limit can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitMinError</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMinError 3
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify a lower error limit for a channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitMinError.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitErrorMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitWarningMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitMinWarning</command:name>
+      <command:verb>LimitMinWarning</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitMinWarning&gt;&lt;/LimitMinWarning&gt; XML tag for specifying the default lower warning limit threeshold of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitMinWarning tag specifies the minimum value a channel's value must stay above to avoid going into a warning state. A sensor will enter a warning state when a channel's value goes below this threshold.</maml:para>
+      <maml:para>If LimitMode is not set to 1 when this channel is created, this value will not take effect until limits are manually enabled in the PRTG UI.</maml:para>
+      <maml:para>This tag can be used in conjunction with LimitMaxWarning and LimitWarningMsg.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the lower warning limit can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitMinWarning</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMinWarning 3
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify a lower warning limit for a channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitMinWarning.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitWarningMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitErrorMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitMode</command:name>
+      <command:verb>LimitMode</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitMode&gt;&lt;/LimitMode&gt; XML tag for specifying whether error and warning limits should be enabled by default for a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitMode tag specifies whether error/warming limits should be enabled by a channel by default. If a LimitMin or LimitMax value has been set, this value must also be specified.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the limit mode can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitMode</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use. Either 1 (enable limits) or 0 (disable limits).</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use. Either 1 (enable limits) or 0 (disable limits).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMaxError 2
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify an upper error limit for a channel with  error limits enabled.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitMode.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitWarningMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitErrorMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>LimitWarningMsg</command:name>
+      <command:verb>LimitWarningMsg</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;LimitWarningMsg&gt;&lt;/LimitWarningMsg&gt; XML tag for specifying the default warning limit message of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The LimitWarningMsg tag specifies the message to display when a channel's value has surpassed its LimitMaxWarning or LimitMinWarning. This tag can be used alongside Limit Error tags including LimitMaxError, LimitMinError and LimitErrorMsg.</maml:para>
+      <maml:para>When a channel's value reaches an Error Limit threshold, the sensor's message will be replaced with the Error Limit Message.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the warning message can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>LimitWarningMsg</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The message to display.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The message to display.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3
+        LimitMode 1
+        LimitMaxWarning 2
+        LimitWarningMsg "System may be overheating!"
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Specify a warning message for a channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/LimitWarningMsg.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxWarning</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMinError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitMaxError</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>LimitErrorMsg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Mode</command:name>
+      <command:verb>Mode</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Mode&gt;&lt;/Mode&gt; XML tag for specifying the mode of a channel in a PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Mode tag specifies whether the channel should display Absolute values or Difference values. By default this value is Absolute.</maml:para>
+      <maml:para>When a channel is configured to use Difference mode, in addition to the typical Last Value, Minimum and Maximum statistics, PRTG will also display the "Last Value (speed)" of the channel, reflecting the difference between the value emitted from the current and the previous scan. Difference mode is typically used in sensors that monitor some type of flow, such as bandwidth sensors.</maml:para>
+      <maml:para>If channels specifying both Absolute and Difference are specified in a single channel definition, the Absolute channels will simply omit their values from the "Last Value (speed)" column. By default values in the "Last Value (speed)" will be displayed in terms of units per second. This can be changed by specifying the SpeedTime property.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Mode</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The channel mode to use. Either Absolute or Difference.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The channel mode to use. Either Absolute or Difference.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value ((Get-Date) - [DateTime]"1/1/17").TotalMinutes
+        Mode Difference
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a speed channel with "Last Value (volume)" and "Last Value (speed)" columns.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Mode.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>NotifyChanged</command:name>
+      <command:verb>NotifyChanged</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;NotifyChanged&gt;&lt;/NotifyChanged&gt; XML tag for triggering notifications when a channel value changes in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The NotifyChanged tag causes a sensor to activate any Change Triggers that are defined on it.</maml:para>
+      <maml:para>Change Triggers will only activate when this tag is present and the the value of the channel is different to the previous scan.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>NotifyChanged</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value ((Get-Date) - [DateTime]"1/1/17").TotalMinutes
+        NotifyChanged
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Activate any Change Triggers that have been defined on the sensor. Sensor value is the number of minutes since January 1st, 2017.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/NotifyChanged.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Prtg</command:name>
+      <command:verb>Prtg</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Prtg&gt;&lt;/Prtg&gt; XML tag for defining a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Prtg tag serves as the root node for all responses given under all EXE/Script Advanced sensors in PRTG, generating the &lt;Prtg&gt;&lt;/Prtg&gt; XML.</maml:para>
+      <maml:para>If the sensor scan completed successfully, the result should contain one or more Result tags with an optional Text message.</maml:para>
+      <maml:para>If the sensor should throw an error without returning any channel values, the Error tag should be set to 1 and a Text message should be displayed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Prtg</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>ScriptBlock</maml:name>
+          <maml:Description>
+            <maml:para>A ScriptBlock containing Text, Error or Result nodes.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>ScriptBlock</maml:name>
+        <maml:Description>
+          <maml:para>A ScriptBlock containing Text, Error or Result nodes.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "First channel"
+        Value 3
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a sensor with a single channel.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Error 1
+    Text "Woops!"
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Display an error message.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Text "Hello world!"
+    Result {
+        Channel "First channel"
+        Value 3
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a sensor with a single channel and a custom message.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Prtg.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Error</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Text</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>about_PrtgXml</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Result</command:name>
+      <command:verb>Result</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Result&gt;&lt;/Result&gt; XML tag for defining a single channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Result tag specifies channels that should be included in the sensor response. Each channel must have a value and unique name, along with any optional formatting tags that may be used to customize the channel's configuration.</maml:para>
+      <maml:para>The Result tag must be specified in a sensor response unless the sensor is returning an error. For more information, see Get-Help Error.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Result</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>ScriptBlock</maml:name>
+          <maml:Description>
+            <maml:para>A ScriptBlock containing a single channel definition.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+          <dev:type>
+            <maml:name>ScriptBlock</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>ScriptBlock</maml:name>
+        <maml:Description>
+          <maml:para>A ScriptBlock containing a single channel definition.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">ScriptBlock</command:parameterValue>
+        <dev:type>
+          <maml:name>ScriptBlock</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a sensor with one channel.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Result.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Error</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Text</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>ShowChart</command:name>
+      <command:verb>ShowChart</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;ShowChart&gt;&lt;/ShowChart&gt; XML tag for specifying whether a channel should be displayed in charts by default in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The ShowChart tag configures whether the channel is shown in charts on the Live Data page. The default value is 1 (true).</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the channel chart visibility can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>ShowChart</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use. Either 1 (show in charts) or 0 (hide from charts).</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use. Either 1 (show in charts) or 0 (hide from charts).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+        ShowChart 0
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Configure a channel's Graph Rendering property to be "Hide from Graphs" by default.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/ShowChart.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>ShowTable</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>ShowTable</command:name>
+      <command:verb>ShowTable</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;ShowTable&gt;&lt;/ShowTable&gt; XML tag for specifying whether a channel should be shown in tables by default in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The ShowTable tag configures whether the channel has a gauge on the channel's Overview page, is shown in Live Data tables and is included in channel retrieval API requests. The default value is 1 (true).</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created. Once created, the channel table visibility can be adjusted under the channel's settings.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>ShowTable</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use. Either 1 (show in tables) or 0 (hide from tables).</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use. Either 1 (show in tables) or 0 (hide from tables).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+        ShowTable 0
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Configure a channel's Table Rendering property to be "Hide from Tables" by default.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/ShowTable.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>ShowChart</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>SpeedSize</command:name>
+      <command:verb>SpeedSize</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;SpeedSize&gt;&lt;/SpeedSize&gt; XML tag for specifying the scaling factor of a channel value's speed in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The SpeedSize tag specifies the speed scaling factor a channel Value has been specified in.</maml:para>
+      <maml:para>When the channel Mode is Difference, SpeedSize refers to the scaling factor of the value that will appear in the "Last Value (speed)" column of a sensor. If the channel Mode is Absolute (the default) specifying this property will have no effect.</maml:para>
+      <maml:para>By default the channel speed will be displayed in terms of units per second. This can be modified by specifying the SpeedTime property.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>SpeedSize</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The scaling factor the channel value has been specified in.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The scaling factor the channel value has been specified in.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value ([int]((Get-Date) - [DateTime]'1/1/17').TotalSeconds * 1000)
+        SpeedSize Kilo
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a channel with a constant difference of around 1000, resulting in a speed value of 1/s (1000/Kilo = 1000/1000 = 1).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/SpeedSize.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>VolumeSize</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SpeedTime</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Mode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Unit</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>SpeedTime</command:name>
+      <command:verb>SpeedTime</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;SpeedTime&gt;&lt;/SpeedTime&gt; XML tag for specifying the rate of a channel's value in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The SpeedTime tag specifies the initial time range to use for the "Last Value (speed)" column of a channel when the channel is configured to use Difference Mode. Once the channel has been created, the time unit cannot be changed.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>SpeedTime</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The rate of time to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The rate of time to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value ((Get-Date) - [DateTime]"1/1/17").TotalMinutes
+        SpeedTime Day
+        Mode Difference
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a channel with a speed of 83,000/d.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/SpeedTime.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SpeedSize</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Mode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Text</command:name>
+      <command:verb>Text</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Text&gt;&lt;/Text&gt; XML tag for specifying a custom message in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Text tag specifies a message that should be displayed on the sensor. This replaces the "OK" text that is normally displayed on the sensor when the sensor is up. When a sensor is returning a successful result, this value optional. If the sensor has failed, this value should be provided.</maml:para>
+      <maml:para>Prior to PRTG 16 this tag cannot be used with LimitError or LimitWarning tags; if a channel surpasses a warning or error limit threshold, the message will be overwritten with the LimitWarningMsg or LimitErrorMsg (which may be null). From PRTG 16+ PRTG will display both the Text and Limit Message together.</maml:para>
+      <maml:para>If this value exceeds 2000 characters, additional characters will be truncated.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Text</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The message to display.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The message to display.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Text "Everything's OK!"
+    Result {
+        Channel "My channel"
+        Value 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a sensor with one channel and a custom message.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Error 1
+    Text "A critical error occurred: The system could not find the file something.txt"
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate an error response.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Text.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Error</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Unit</command:name>
+      <command:verb>Unit</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Unit&gt;&lt;/Unit&gt; XML tag for specifying the unit of a single channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Unit tag specifies the unit of the channel Value. The unit of the channel allows PRTG to automatically convert values such as volumes and times based on their size. The default value is Custom.</maml:para>
+      <maml:para>The following values are supported</maml:para>
+      <maml:para>| Name           | Default Unit         |
+| -------------- | -------------------- |
+| BytesBandwidth | KByte                |
+| BytesDisk      | MByte                |
+| BytesFile      | Byte                 |
+| BytesMemory    | MByte                |
+| Count          | #                    |
+| CPU            | %                    |
+| Custom         | Custom               |
+| Percent        | %                    |
+| SpeedDisk      | /s                   |
+| SpeedNet       | /s                   |
+| Temperature    | °C                   |
+| TimeHours      | h                    |
+| TimeResponse   | msec                 |
+| TimeSeconds    | Dynamic (s, m, h, d) |</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Unit</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The unit to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The unit to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 30
+        Unit Percent
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a sensor with a channel that uses a percentage unit.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Unit.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>CustomUnit</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Value</command:name>
+      <command:verb>Value</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Value&gt;&lt;/Value&gt; XML tag for specifying the value of a single channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Value tag specifies the value to use for a channel. Must be an integer or a floating point number.</maml:para>
+      <maml:para>If the value is a float, the Float tag must be specified. If you specify a floating point number that contains any value other than 0 after the decimal point without setting the Float tag to 1, the number will be displayed as 0 in PRTG.</maml:para>
+      <maml:para>If a result is being returned, this value is mandatory.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Value</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a channel with a integer value.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 3.5
+        Float 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Generate a channel with a floating point number.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value ([int]1.23456789)
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Show a floating point number as an integer in the PRTG UI.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Value.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Float</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Unit</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>ValueLookup</command:name>
+      <command:verb>ValueLookup</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;ValueLookup&gt;&lt;/ValueLookup&gt; XML tag for specifying the default value lookup of a channel in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The ValueLookup tag specifies the default Value Lookup to use with the channel's value.</maml:para>
+      <maml:para>Value Lookups allows PRTG to replace a channel's numeric value with a textual representation. Sophisticated dials can be created using Value Lookups allowing PRTG to show a system as being in a particular state.</maml:para>
+      <maml:para>Value Lookups are stored on the PRTG Core Server under C:\Program Files (x86)\PRTG Network Monitor\lookups. Custom lookups can be stored under the lookups\custom subfolder, and then loaded via the Load Lookups option under Setup -&gt; Administrative Tools.</maml:para>
+      <maml:para>This tag will only be considered when the channel is initially created.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>ValueLookup</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The name of a standard or custom lookup that has been installed on the PRTG Core.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The name of a standard or custom lookup that has been installed on the PRTG Core.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+        ValueLookup prtg.standardlookups.yesno.stateyesok
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a sensor with a channel that shows "Yes" or "No" depending on its value (1 or 2).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/ValueLookup.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>PRTG Manual:</maml:linkText>
+        <maml:uri>https://www.paessler.com/manuals/prtg/define_lookups</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>VolumeSize</command:name>
+      <command:verb>VolumeSize</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;VolumeSize&gt;&lt;/VolumeSize&gt; XML tag for specifying the scaling factor of a channel value's volume in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The VolumeSize tag specifies the volume scaling factor a channel Value has been specified in.</maml:para>
+      <maml:para>When the channel Mode is Absolute (the default), the VolumeSize refers to the scaling factor of the value that will appear in the "Last Value" column of a sensor.</maml:para>
+      <maml:para>When defining a channel where the Mode is Difference, VolumeSize specifies the scaling factor of the channel Value that applies to the "Last Value (volume)" column, while SpeedSize specifies the scaling factor of the value that applies to the "Last Value (speed)" column.</maml:para>
+      <maml:para>As all channels default to Absolute Mode by default, unless a Mode has been explicitly specified the VolumeSize property should always be used over the SpeedSize property.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>VolumeSize</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The scaling factor the channel value has been specified in.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The scaling factor the channel value has been specified in.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1000
+        Unit TimeSeconds
+        VolumeSize Kilo
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Create a sensor with a value of 1s (1000/Kilo = 1000/1000 = 1).</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/VolumeSize.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SpeedSize</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Mode</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Unit</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Warning</command:name>
+      <command:verb>Warning</command:verb>
+      <command:noun></command:noun>
+      <maml:description>
+        <maml:para>Generates a &lt;Warning&gt;&lt;/Warning&gt; XML tag for specifying that a channel should enter a warning state in a custom PRTG Network Monitor EXE/XML Sensor.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Warning tag causes a sensor to enter a Warning state when specified on at least one channel. Default value is 0 (false).</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Warning</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Value</maml:name>
+          <maml:Description>
+            <maml:para>The value to use. Either 1 (warning) or 0 (no warning).</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Value</maml:name>
+        <maml:Description>
+          <maml:para>The value to use. Either 1 (warning) or 0 (no warning).</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert />
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Result {
+        Channel "My channel"
+        Value 1
+        Warning 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Trigger a warning state on a sensor.</maml:para>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <dev:code>Prtg {
+    Text "Bad things happened"
+    Result {
+        Channel "My channel"
+        Value 1
+        Warning 1
+    }
+}</dev:code>
+        <dev:remarks>
+          <maml:para>Trigger a warning with a custom message.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version:</maml:linkText>
+        <maml:uri>https://github.com/lordmilko/PrtgXml/blob/master/docs/Warning.md</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Prtg</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Text</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Result</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Channel</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Value</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Error</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

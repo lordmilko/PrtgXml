@@ -1,0 +1,1 @@
+powershell -executionpolicy bypass -command ". %~dp0\Update-PrtgHelp.ps1 -Batch"
