@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot\PrtgXml
+Import-Module $PSScriptRoot\src\PrtgXml.psd1
 
 Describe "Result Tags" {
 	Context "Valid XML" {

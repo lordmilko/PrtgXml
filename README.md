@@ -2,7 +2,7 @@
 
 [![Build status](https://img.shields.io/appveyor/ci/lordmilko/prtgxml.svg)](https://ci.appveyor.com/project/lordmilko/prtgxml)
 
-*PrtgXml* is a PowerShell module for generating the XML output required by *EXE/Script Advanced* custom sensors.
+*PrtgXml* is a PowerShell library that provides a declarative syntax for creating EXE/Script Advanced sensors in PRTG Network Monitor.
 
 Typically, to generate a response with one channel the following XML is required
 

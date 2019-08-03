@@ -10,7 +10,9 @@ test_script:
 after_test:
 - ps: New-AppveyorPackage
 artifacts:
-- path: PrtgXml
+- path: src
+  name: PrtgXml
+  type: zip
 - path: '*.nupkg'
 skip_commits:
   files:

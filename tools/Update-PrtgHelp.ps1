@@ -7,7 +7,7 @@ function Update-PrtgHelp
 {
     Write-Warning "You must have hacked GetMarkdownFilesFromPath in platyPS to use this file"
 
-    $outDir = "$PSScriptRoot\..\PrtgXml"
+    $outDir = "$PSScriptRoot\..\src"
 
     New-ExternalHelp $PSScriptRoot\..\docs -OutputPath $outDir -Force
 

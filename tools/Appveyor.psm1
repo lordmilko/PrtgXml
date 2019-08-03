@@ -6,7 +6,7 @@ function New-AppveyorPackage
     Write-Host -ForegroundColor Cyan "Creating Nuget Package"
     $repoLocation = "$env:TEMP\TempRepository"
     $projectRoot = "$env:APPVEYOR_BUILD_FOLDER"
-    $outputDir = "$env:APPVEYOR_BUILD_FOLDER\PrtgXml"
+    $outputDir = "$env:APPVEYOR_BUILD_FOLDER\src"
 
     InstallProvider
     CreateRepo $repoLocation $outputDir
@@ -38,9 +38,9 @@ function New-AppveyorPackage
 
 function Set-AppveyorVersion
 {
-    $version = (Import-PowerShellDataFile .\PrtgXml\PrtgXml.psd1).ModuleVersion
+    $version = (Import-PowerShellDataFile .\src\PrtgXml.psd1).ModuleVersion
     Write-Host "Attempting to set Appveyor build to version '$version'"
-    Update-AppveyorBuild -Version $version
+    Update-AppveyorBuild -Version $version -ErrorAction Stop
 }
 
 function Invoke-AppveyorTest
@@ -106,40 +106,32 @@ function CreateRepo($repoPath, $outputDir)
 
 function CreatePowerShell($outputDir)
 {
-    BackupOutputDir $outputDir
+    $publishDir = CreatePublishDir $outputDir
 
-    gci $outputDir -Filter *.cmd | Remove-Item -Force
+    gci $publishDir -Filter *.cmd | Remove-Item -Force
 
     Write-Host "Publishing module to TempRepository"
 
-    Publish-Module -Path $outputDir -Repository TempRepository
+    Publish-Module -Path $publishDir -Repository TempRepository
 
-    RestoreOutputDir $outputDir
+    Remove-Item $publishDir -Force -Recurse
 }
 
-function BackupOutputDir($outputDir)
+function CreatePublishDir($outputDir)
 {
-    Write-Host "Backing up build output"
+    Write-Host "Creating publish directory"
 
-    if($outputDir.EndsWith("\"))
+    $publishDir = "$env:temp\PrtgXml"
+
+    if(Test-Path $publishDir)
     {
-        $outputDir = $outputDir.Substring(0, $outputDir.Length - 1)
+        Write-Host "    Removing publish directory left over from a previous run"
+        Remove-Item $publishDir -Recurse -Force
     }
 
-    Copy-Item -Recurse $outputDir "$($outputDir)_bak"
-}
+    Copy-Item -Recurse $outputDir $publishDir
 
-function RestoreOutputDir($outputDir)
-{
-    if($outputDir.EndsWith("\"))
-    {
-        $outputDir = $outputDir.Substring(0, $outputDir.Length - 1)
-    }
-
-    Write-Host "Restoring build output"
-    gci "$($outputDir)_bak" | foreach { mv $_.FullName "$outputDir\$($_.Name)" -Force }
-    
-    Remove-Item -Recurse -Force "$($outputDir)_bak"
+    return $publishDir
 }
 
 function TestPackage
