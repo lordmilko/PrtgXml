@@ -61,6 +61,12 @@ You can install *PrtgXml* on any computer running PowerShell 5 by executing
 Install-Package PrtgXml
 ```
 
+If you are using Windows PowerShell, due to the PowerShell Gallery now requiring TLS 1.2 you may need to manually specify to use TLS 1.2 in order to install or update PrtgXml
+
+```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+```
+
 When using *PrtgXml*, it's advised to perform a check to see whether or not *PrtgXml* needs to be installed. For more information, see *Tips* below.
 
 Note: if you were previously using this package under its previous name (*PrtgAPI.CustomSensors*) you will need to uninstall the existing package first before you can install the new one
@@ -86,6 +92,8 @@ The first time you install a package from NuGet, PowerShell will prompt you to i
 To bypass these prompts and make your scripts portable and versatile, you can incorporate the following snippet into your code
 
 ```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+
 if(!(Get-Module -ListAvailable PrtgXml))
 {
     Install-Package PrtgXml -ForceBootstrap -Force | Out-Null
