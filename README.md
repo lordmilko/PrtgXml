@@ -49,6 +49,28 @@ Prtg {
 }
 ```
 
+While the "magic" of *PrtgXml* may seem weird if you've never seen this type of programming before, it's ultimately all just normal PowerShell; the `Prtg` function takes a single `ScriptBlock` as a parameter, which when executed retrieves all of the text to include inside of the `<Prtg></Prtg>` tags. The resulting XML is then formatted nicely and emitted from the function as a `string`. As such, within each `ScriptBlock` there aren't really any *rules* you have to follow. Whatever values are returned, *PrtgXml* will incorporate into the result.
+
+```
+# In PowerShell, any statement that emits a value will implicitly be "returned" from a function
+# or ScriptBlock. As such, you can just do whatever and PrtgXml will capture the results.
+Prtg {
+    Result {
+        Channel "Channel1"
+        Value 10
+    }
+    
+    Result {
+        Channel "Channel2"
+        Value 20
+    }
+    
+    "<Result><Channel>Channel3</Channel><Value>30</Value></Result>"
+    
+    GetChannel4
+}
+```
+
 For help using *PrtgXml* within PowerShell, run `Get-Help PrtgXml`
 
 ## Installation
